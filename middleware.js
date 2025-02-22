@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(request) {
-    const correctPassword = 'your_secure_password';
+    const correctPassword = '14&2x';
     const url = request.nextUrl.clone();
 
     // Check if the user is authenticated
