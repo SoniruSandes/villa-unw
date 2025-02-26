@@ -33,9 +33,16 @@ table {
     text-align: left;
 }
 
-table th, table td {
+table th {
     padding: 12px 15px;
     border: 1px solid #004d40; /* Dark teal border */
+    vertical-align: middle;
+}
+table td {
+    padding: 10px 15px;
+    border: 1px solid #004d40; /* Dark teal border */
+    vertical-align: middle;
+    text-align: left;
 }
 
 table th {
@@ -79,3 +86,63 @@ button:hover {
     color: #00796b; /* Teal text */
     border: 2px solid #00796b; /* Teal border */
 }
+
+/* Expanding Wifi Chart */
+.wifi-usage-table {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Centers the table horizontally */
+    text-align: center; /* Ensures text inside stays centered */
+    display: none; /* Ensures it is hidden before JavaScript loads */
+    
+}
+.table-container {
+    display: flex;
+    justify-content: center; /* Centers table horizontally */
+    align-items: center; /* Aligns vertically */
+    width: 100%;
+}
+
+
+
+/* Updated Table */
+td:nth-child(3) {
+    padding: 10px;
+}
+
+.activity {
+    display: inline-block;
+    width: 200px; /* Ensures equal width */
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    margin: 2px; /* Adds spacing between activities */
+}
+
+.activity:hover::after {
+    content: attr(data-percent);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+    white-space: nowrap;
+}
+
+
+/* Ensure canvas elements are visible and properly sized */
+.charts-container {
+    display: flex;
+    justify-content: center; /* Centers the charts */
+    gap: 30px; /* Adds spacing between charts */
+    flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+
+canvas {
+    width: 150px !important;
+    height: 150px !important;
+}
+
